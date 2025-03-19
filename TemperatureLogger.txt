@@ -1,0 +1,5 @@
+c:\
+cd C:\Users\Marc Kamsu\Desktop\Marc\School\Grad school\Grad School @ SCSU\Fall2020\ECE699\Software\SmartMesh_IP\GUI\Network_Manager_GUI\Application Files
+TempLogger.exe
+COM23
+pause

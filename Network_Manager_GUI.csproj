@@ -1,0 +1,245 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{CD6BAD6C-8C9F-46D2-95BB-D871EB6E2983}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Network_Manager_GUI</RootNamespace>
+    <AssemblyName>Network_Manager_GUI</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="ZedGraph">
+      <HintPath>zedgraph_dll_v515\zedgraph_dll_v5.1.5\ZedGraph.dll</HintPath>
+    </Reference>
+    <Reference Include="ZedGraph.Web">
+      <HintPath>zedgraph_dll_v515\zedgraph_dll_v5.1.5\ZedGraph.Web.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AccessPoint.cs" />
+    <Compile Include="CommandLineExecute.cs" />
+    <Compile Include="Common.cs" />
+    <Compile Include="ImageResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ImageResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="LoadFirmware.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoadFirmware.Designer.cs">
+      <DependentUpon>LoadFirmware.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mote.cs" />
+    <Compile Include="NetworkManager.cs" />
+    <Compile Include="Network_Manager_GUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Network_Manager_GUI.Designer.cs">
+      <DependentUpon>Network_Manager_GUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Serial_Port_Settings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Serial_Port_Settings.Designer.cs">
+      <DependentUpon>Serial_Port_Settings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="NetworkStatistics.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NetworkStatistics.Designer.cs">
+      <DependentUpon>NetworkStatistics.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Oscilloscope.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Oscilloscope.Designer.cs">
+      <DependentUpon>Oscilloscope.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TemperaturePlotter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TemperaturePlotter.Designer.cs">
+      <DependentUpon>TemperaturePlotter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TemperatureLogger.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TemperatureLogger.Designer.cs">
+      <DependentUpon>TemperatureLogger.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="ImageResource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ImageResource.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoadFirmware.resx">
+      <DependentUpon>LoadFirmware.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Network_Manager_GUI.resx">
+      <DependentUpon>Network_Manager_GUI.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Serial_Port_Settings.resx">
+      <DependentUpon>Serial_Port_Settings.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Content Include="Firmware Files\FullAccessPointImage.bin">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Firmware Files\FullManagerImage.bin">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Firmware Files\FullMoteImage.bin">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <EmbeddedResource Include="NetworkStatistics.resx">
+      <DependentUpon>NetworkStatistics.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Oscilloscope.resx">
+      <DependentUpon>Oscilloscope.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TemperaturePlotter.resx">
+      <DependentUpon>TemperaturePlotter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TemperatureLogger.resx">
+      <DependentUpon>TemperatureLogger.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Image Resources\scsu.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Image Resources\alertR.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Image Resources\alertY.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Image Resources\check.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Image Resources\checkmark_small.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Image Resources\cross1_1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Image Resources\loading.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Image Resources\progressBlue.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Image Resources\SymbolError.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Image Resources\Warning%28mini%29.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Image Resources\ready.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Firmware Files\ESP.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Firmware Files\ftcspi.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>
